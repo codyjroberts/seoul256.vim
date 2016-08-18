@@ -86,9 +86,11 @@ let s:style_idx = s:style == 'light'
 if s:style == 'dark'
   let s:dark_bg  = get(s:, 'seoul256_background', 237)
   let s:light_bg = 253
+  let g:indent_lines_color = 236
 else
   let s:dark_bg  = 237
   let s:light_bg = get(s:, 'seoul256_background', 253)
+  let g:indent_lines_color = 252
 endif
 let s:dark_bg_2 = s:dark_bg > 233 ? s:dark_bg - 2 : 16
 let s:light_bg_1 = min([s:light_bg + 1, 256])
@@ -123,7 +125,7 @@ endif
 
 call s:hi('Normal', [s:dark_fg, s:light_fg], [s:dark_bg, s:light_bg])
 
-call s:hi('LineNr', [101, 101], [s:dark_bg + 1, s:light_bg - 2])
+call s:hi('LineNr', [s:dark_bg + 2, 101], [s:dark_bg, s:light_bg])
 call s:hi('Visual', ['', ''], [23, 152])
 call s:hi('VisualNOS', ['', ''], [23, 152])
 
@@ -213,7 +215,7 @@ call s:hi('MatchParen', ['', ''], [s:dark_bg + 3, s:light_bg - 3])
 call s:hi('ModeMsg', [173, 173], ['', ''])
 
 " let &showbreak = '> '
-call s:hi('NonText', [101, 101], ['', ''])
+call s:hi('NonText', [s:dark_bg + 2, 101], ['', ''])
 
 call s:hi('MoreMsg', [173, 173], ['', ''])
 
@@ -294,12 +296,6 @@ call s:hi('Ignore',  [s:dark_bg + 3, s:light_bg - 3], [s:dark_bg, s:light_bg])
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""
-
-" vim-indent-guides
-" -----------------
-let g:indent_guides_auto_colors = 0
-call s:hi('IndentGuidesOdd', ['', ''], [s:dark_bg - 1, s:light_bg + 1])
-call s:hi('IndentGuidesEven', ['', ''], [s:dark_bg + 1, s:light_bg - 1])
 
 " vim-gitgutter
 " -------------
