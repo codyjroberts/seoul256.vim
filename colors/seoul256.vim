@@ -270,7 +270,7 @@ call s:hi('StatusLine', [95, 95], [187, 187])
 call s:hi('StatusLineNC', [s:dark_bg + 2, s:light_bg - 2], [187, 238])
 call s:hi('TabLineFill', [s:dark_bg + 2, s:light_bg - 2], ['', ''])
 call s:hi('TabLineSel', [187, 187], [23, 66])
-call s:hi('TabLine', [s:dark_bg + 12, s:light_bg - 12], [s:dark_bg + 4, s:light_bg - 4])
+call s:hi('TabLine', [s:dark_bg, s:light_bg], [s:dark_bg, s:light_bg])
 call s:hi('WildMenu', [95, 95], [184, 184])
 
 " :set all
@@ -283,7 +283,7 @@ call s:hi('Question', [179, 88], ['', ''])
 call s:hi('WarningMsg', [179, 88], ['', ''])
 
 " Sign column
-call s:hi('SignColumn', [173, 173], [s:dark_bg, s:light_bg])
+call s:hi('SignColumn', [s:dark_bg, s:light_bg], [s:dark_bg, s:light_bg])
 
 " Diff
 call s:hi('diffAdded',   [108, 65], ['', ''])
@@ -303,6 +303,12 @@ call s:hi('GitGutterAdd', [108, 65], [s:dark_bg + 1, s:light_bg - 2])
 call s:hi('GitGutterChange', [68, 68], [s:dark_bg + 1, s:light_bg - 2])
 call s:hi('GitGutterDelete', [161, 161], [s:dark_bg + 1, s:light_bg -2 ])
 call s:hi('GitGutterChangeDelete', [168, 168], [s:dark_bg + 1, s:light_bg - 2])
+
+" vim-signify
+" -----------
+call s:hi('SignifySignAdd', [108, 65], [s:dark_bg, s:light_bg])
+call s:hi('SignifySignDelete', [161, 161], [s:dark_bg, s:light_bg])
+call s:hi('SignifySignChange', [68, 68], [s:dark_bg, s:light_bg])
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces     
 " ---------------------------------------------------^^^^^
